@@ -10,7 +10,6 @@ function App() {
 
   const InputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setInput(event.target.value)
-
   }
   const listOfItems = () => {
     const newInput = { myInput: input }
