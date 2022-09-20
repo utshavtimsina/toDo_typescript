@@ -1,7 +1,7 @@
 
 import React, { ChangeEvent, useState } from 'react';
 import './style/Style.css';
-// import './App.css'
+// import './App.css' //Remove
 import { Iinput } from './Interface';
 import TodoList from './Todo';
 function App() {
@@ -10,19 +10,18 @@ function App() {
 
   const InputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setInput(event.target.value)
-
   }
+  
   const listOfItems = () => {
     const newInput = { myInput: input }
     setItems([...items, newInput])
-    // console.log(items)
     setInput("")
   }
 
   const deleteItems = (deleteTodo: string): void => {
     setItems(items.filter((input) => {
       return input.myInput != deleteTodo;
-
+      //not sure why using object here
     }))
   }
 
@@ -43,7 +42,6 @@ function App() {
                 items.map((input: Iinput, key: number) => {
                   return <TodoList key={key} input={input} deleteItems={deleteItems} />
                 })
-
               }
             </li>
           </ul>
